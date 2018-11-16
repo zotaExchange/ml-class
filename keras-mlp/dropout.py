@@ -12,8 +12,8 @@ run = wandb.init()
 config = run.config
 config.optimizer = "adam"
 config.epochs = 50
-config.dropout = 0.4
-config.hidden_nodes = 100
+config.dropout = 0.4 # zero out 40% of inputs (from prev layer) (20-50% is used generally) for the next layer
+config.hidden_nodes = 100 # how many perceptrons we wanna put in hidden layer
 
 # load data
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
